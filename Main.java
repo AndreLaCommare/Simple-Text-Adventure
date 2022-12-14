@@ -42,9 +42,9 @@ public class Main {
 				System.out.println("\t 3.) Dodge");
 				System.out.println("\t 4.) Run");
 
-				int userInput = kb.nextInt();
+				String userInput = kb.nextLine();
 
-				if (userInput == 1){
+				if (userInput.equals("1")){
 					int playerDamage = rand.nextInt(playerMaxAttack);
 					int enemyDamage = rand.nextInt(enemyMaxAttack);
 					playerHealth -= enemyDamage;
@@ -70,7 +70,7 @@ public class Main {
 					}
 
 				}
-				else if (userInput == 2){
+				else if (userInput.equals("2")){
 					if (estusFlasks > 0){
 						playerHealth += estusHealPoints;
 						estusFlasks --;
@@ -83,13 +83,13 @@ public class Main {
 					}
 
 				}
-				else if (userInput == 3){
+				else if (userInput.equals("3")){
 					System.out.println("\t> The " + enemy + " makes a mighty sweeping blow with its " + weapon + " cleaving nothing but air, as you deftly evade the blow.");
 
 
 
 				}
-				else if (userInput == 4){
+				else if (userInput.equals("4")){
 					System.out.println("\t> You flee the " + enemy + "!");
 					continue GAME;
 
@@ -118,17 +118,17 @@ public class Main {
 				System.out.println("1.) Venture Further");
 				System.out.println("2.) Attempt Escape");
 
-				int userInput2 = kb.nextInt();
+				String userInput2 = kb.nextLine();
 
-				while(userInput2 != 1 && userInput2 != 2){
+				while(!(userInput2.equals("1")) && !(userInput2.equals("2"))){
 					System.out.println("Invalid option. Please select again.");
-					userInput2 = kb.nextInt();
+					userInput2 = kb.nextLine();
 				}
 
-				if (userInput2 == 1){
+				if (userInput2.equals("1")){
 					System.out.println("Unphased by your battle, you push further into the dark.");
 				}
-				else if (userInput2 == 2){
+				else if (userInput2.equals("2")){
 					System.out.println("Scrambling back, fumbling through the dark, you eventually stumble across a pale stream of light."
 					 +"\nFollowing it leads you outside, to a world bathed in blood red luminescence.");
 					break;
